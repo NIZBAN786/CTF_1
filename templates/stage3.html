@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Node - CTF{% endblock %}
+{% block content %}
+<div class="grid gap-6">
+  <div>
+    <h1 class="text-3xl font-semibold">Node</h1>
+  </div>
+
+  <div class="rounded border border-slate-800 bg-slate-800/40 p-4">
+    <pre class="mt-2 p-3 rounded bg-slate-900 border border-slate-800 overflow-x-auto">{{ stage3_flag }}</pre>
+  </div>
+</div>
+{% endblock %}
+
+

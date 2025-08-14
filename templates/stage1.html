@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Gallery - CTF{% endblock %}
+{% block content %}
+<div class="grid gap-6">
+  <div>
+    <h1 class="text-3xl font-semibold">Gallery</h1>
+  </div>
+
+  <div class="rounded border border-slate-800 overflow-hidden">
+    <img src="{{ url_for('static', filename='ctf_stage1.jpg') }}" alt="Stage 1" class="w-full" />
+  </div>
+
+  <div class="text-sm text-slate-400"></div>
+
+  <div class="mt-4">
+    <a href="{{ url_for('stage2') }}" class="inline-flex items-center gap-2 rounded bg-orange-600 hover:bg-orange-500 px-4 py-2">Continue</a>
+  </div>
+</div>
+{% endblock %}
+
+

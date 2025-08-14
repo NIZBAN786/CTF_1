@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}CTF{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-900 text-slate-100">
+    <header class="border-b border-slate-700 bg-slate-800/60 backdrop-blur">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="{{ url_for('index') }}" class="font-semibold tracking-wide">CTF</a>
+        <nav class="flex items-center gap-4 text-sm">
+          <a class="hover:text-orange-400" href="{{ url_for('stage1') }}">Gallery</a>
+          <a class="hover:text-orange-400" href="{{ url_for('stage2') }}">Codex</a>
+          <a class="hover:text-orange-400" href="{{ url_for('stage3_code') }}">Node</a>
+          {% if session.get('auth') %}
+          <a class="text-orange-400 hover:text-orange-300" href="{{ url_for('logout') }}">Logout</a>
+          {% else %}
+          <a class="text-orange-400 hover:text-orange-300" href="{{ url_for('login') }}">Gate</a>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-10">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="border-t border-slate-800 text-center text-xs py-6 text-slate-400">
+      <p>Flags look like <span class="font-mono">_0dayBrothers{...}</span></p>
+    </footer>
+  </body>
+  
+</html>
+
+

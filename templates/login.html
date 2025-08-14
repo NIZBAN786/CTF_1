@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Gate - CTF{% endblock %}
+{% block content %}
+<div class="max-w-md mx-auto">
+  <h1 class="text-3xl font-semibold mb-6">Login</h1>
+  <p class="text-slate-400 text-sm mb-6">Authenticate to continue.</p>
+
+  {% if error %}
+    <div class="mb-4 rounded border border-red-500 bg-red-500/10 px-3 py-2 text-red-300 text-sm">{{ error }}</div>
+  {% endif %}
+
+  <form method="post" class="space-y-4">
+    <div>
+      <label class="block text-sm mb-1">Username</label>
+      <input class="w-full rounded bg-slate-800 border border-slate-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" name="username" placeholder="username" required />
+    </div>
+    <div>
+      <label class="block text-sm mb-1">Password</label>
+      <input type="password" class="w-full rounded bg-slate-800 border border-slate-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" name="password" placeholder="password" required />
+    </div>
+    <button class="w-full rounded bg-orange-600 hover:bg-orange-500 px-3 py-2 font-medium">Login</button>
+  </form>
+
+  
+</div>
+{% endblock %}
+
+
